@@ -16,12 +16,20 @@ class Cell:
     def draw(self):
         if self.has_top_wall:
             Line(self.top_left, self.top_right).draw(self.window.canvas)
+        else:
+            Line(self.top_left, self.top_right).draw(self.window.canvas, "white")
         if self.has_bottom_wall:
             Line(self.bottom_left, self.bottom_right).draw(self.window.canvas)
+        else:
+            Line(self.bottom_left, self.bottom_right).draw(self.window.canvas, "white")
         if self.has_left_wall:
             Line(self.top_left, self.bottom_left).draw(self.window.canvas)
+        else:
+            Line(self.top_left, self.bottom_left).draw(self.window.canvas, "white")
         if self.has_right_wall:
             Line(self.top_right, self.bottom_right).draw(self.window.canvas)
+        else:
+            Line(self.top_right, self.bottom_right).draw(self.window.canvas, "white")
 
     def draw_move(self, other, undo=False):
         connect_line = Line(self.center, other.center)
